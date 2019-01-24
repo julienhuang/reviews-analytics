@@ -21,3 +21,11 @@ for single_data in data:
 avg_length = total_length / len(data)
 print('平均留言長度為:', avg_length, '字數')
 
+#篩選出長度少於100字的留言
+new_list = []
+for single_data in data:
+	if len(single_data) < 100:
+		new_list.append(single_data) #長度少於100字的裝進新的清單"new_list"
+print('長度少於100字的留言一共有:', len(new_list), '筆留言')
+print(new_list[0])
+
