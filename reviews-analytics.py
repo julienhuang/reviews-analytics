@@ -21,7 +21,7 @@ for single_data in data:
 avg_length = total_length / len(data)
 print('平均留言長度為:', avg_length, '字數')
 
-#篩選出長度少於100字的留言
+#篩選出長度少於100字的留言有多少筆
 new_list = []
 for single_data in data:
 	if len(single_data) < 100:
@@ -29,3 +29,14 @@ for single_data in data:
 print('長度少於100字的留言一共有:', len(new_list), '筆留言')
 print(new_list[0])
 
+#篩選出留言裡頭有"good"這個字的留言有多少筆
+good_review = []
+for single_data in data:
+	if 'good' in single_data: #在每筆留言中搜尋'good'這個單字
+		good_review.append(single_data)
+
+#以上4行的簡化快寫法, 可寫成1行如下：   
+#good_review = [single_data for single_data in data if 'good' in single_data]
+
+print('留言中有出現"good"這個單字的留言一共有:', len(good_review), '筆留言')
+print(good_review[0])
